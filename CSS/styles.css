@@ -1,0 +1,232 @@
+/* Variables declarations*/
+/*
+  --color1: rgb(21, 45, 101);
+  --color2: rgba(22, 80, 135, 0.89);
+  --color3: rgba(10, 30, 49, 0.89);
+  --color4: rgb(38, 68, 239);
+*/
+:root{
+  --nav-ly-color: rgba(255, 255, 255, 0.866);
+  --nav-ly-color2: black;
+  --welcome-ly-color1: rgba(255, 255, 255, 0.918);
+  --color1: rgb(4, 25, 72);
+  --color2: rgba(3, 44, 83, 0.89);
+  --color3: rgba(0, 0, 0, 1);
+  --color4: rgba(117, 248, 255, 0.749);
+  --project-color: rgba(255, 255, 255, 0.76);
+}
+/*
+  General section
+*/
+* {
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0px;
+  padding: 0px;
+  background-color: var(--color1);
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+section{
+  padding: 0;
+}
+/* Nav Bar Section*/
+
+#navbar{
+  position: fixed;
+  top: 0px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 10vh;
+  background: linear-gradient( 90deg,
+    var(--color2),
+    var(--color3));
+  min-width: 300px;
+  min-height: 60px;
+}
+
+#navbar ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+#navbar li{
+  float: right;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  height: 100%;
+}
+
+#navbar li.left{
+  float: left;
+}
+
+#navbar li:hover{
+  /*color: var(--nav-ly-color);*/
+  background: linear-gradient(to top,white, transparent 20%);
+}
+
+#navbar a{
+  color: var(--nav-ly-color);
+  font-weight: bold;
+  font-size: 20px;
+  display: block;
+  text-align: center;
+  padding: 25% 0% 0% 0%;
+  text-decoration: none;
+}
+
+/* Welcome section*/
+
+.wel-div{
+  height: 100vh;
+  background-image: url("https://concepto.de/wp-content/uploads/2018/09/lenguaje-de-programaci%C3%B3n-e1537466894547.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+  color: var(--welcome-ly-color1);
+}
+
+.wel-div-dif{
+  background: linear-gradient(var(--color2) 5%, var(--color3) 65%,transparent);
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#welcome-section h1{
+  font-size: 10vh;
+}
+
+#welcome-section p{
+  font-size: 5vh;
+}
+
+.code{
+  display: block;
+  text-align: center;
+  font-size: 5vh;
+  font-family: courier new;
+  color: var(--color4);
+  width: auto;
+  white-space: wrap;
+}
+
+/* Projects section*/
+#projects{
+  background-color: var(--color2);
+  height: auto;
+  color: var(--project-color);
+  padding: 0 10%;
+}
+
+#projects h2{
+  display: block;
+  text-align: center;
+  font-size: 10vh;
+  padding-top: 6%;
+  padding-bottom: 5%;
+}
+
+#projects .project-tile{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px 10px;
+}
+
+.pro-box{
+    width: 300px;
+    text-align: center;
+    background-color: var(--color3);
+    border-radius: 5%;
+    color: white;
+    font-weight: bold;
+}
+
+.pro-box:hover{
+  background-color: var(--color4);
+  color: black;
+  font-weight: bold;
+}
+
+.pro-box p{
+  width: 100%;
+  padding-bottom: 1%;
+}
+
+#projects img{
+    width: 100%;
+    height: auto;
+    border-radius: 5%;
+}
+
+/* Footer section*/
+
+.profile{
+  margin: 0;
+  background-color: var(--color3);
+  height: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10vw;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 5% 0% 0% 0;
+}
+
+.profile a{
+  text-decoration: none;
+  color: aliceblue;
+  font-weight: lighter;
+}
+
+.profile p{
+  height: 10vh;
+}
+
+.icon{
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+/* Media*/
+
+@media (max-width: 400px){
+  #projects{
+    height: auto;
+  }
+
+  #projects h2{
+    display: block;
+    text-align: left;
+    font-size: 5vh;
+  }
+
+  .profile{
+    flex-wrap: wrap;
+  }
+}
+
+/* Animaciones*/
+
