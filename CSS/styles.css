@@ -213,6 +213,10 @@ section{
 /* Media*/
 
 @media (max-width: 400px){
+  #navbar a{
+    font-size: 18px;
+  }
+
   #projects{
     height: auto;
   }
