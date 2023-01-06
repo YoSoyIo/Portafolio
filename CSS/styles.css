@@ -78,10 +78,15 @@ section{
 #navbar a{
   color: var(--nav-ly-color);
   font-weight: bold;
-  font-size: 20px;
+  font-size: 3vh;
   display: block;
   text-align: center;
-  padding: 25% 0% 0% 0%;
+  text-anchor: middle;
+  padding:  30px 10px;
+  text-decoration: none;
+}
+
+#navbar a:visited{
   text-decoration: none;
 }
 
@@ -215,6 +220,7 @@ section{
 @media (max-width: 400px){
   #navbar a{
     font-size: 18px;
+    padding:  30px 0px;
   }
 
   #projects{
