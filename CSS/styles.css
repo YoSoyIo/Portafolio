@@ -35,6 +35,8 @@ body{
 
 section{
   padding: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 /* Nav Bar Section*/
 
@@ -129,20 +131,42 @@ section{
   white-space: wrap;
 }
 
+/* Aboutme section*/
+#about-section{
+    background-color: #4682b478;
+    height: auto;
+    color: var(--project-color);
+    padding-left: 0;
+    margin-left: 10%;
+    width: 80%;
+    border-radius: 20px;
+}
+
+#about-section h2{
+  display: block;
+  text-align: center;
+  font-size: 10vh;
+  padding-top: 0%;
+  padding-bottom: 2%;
+}
+
 /* Projects section*/
 #projects{
-  background-color: var(--color2);
-  height: auto;
-  color: var(--project-color);
-  padding: 0 10%;
+    background-color: #4682b478;
+    height: auto;
+    color: var(--project-color);
+    padding-left: 0;
+    margin-left: 10%;
+    width: 80%;
+    border-radius: 20px;
 }
 
 #projects h2{
   display: block;
   text-align: center;
   font-size: 10vh;
-  padding-top: 6%;
-  padding-bottom: 5%;
+  padding-top: 0%;
+  padding-bottom: 2%;
 }
 
 #projects .project-tile{
@@ -155,6 +179,8 @@ section{
   max-width: 1400px;
   margin: 0 auto;
   padding: 20px 10px;
+  border-radius: 30px;
+  margin-bottom: 20px;
 }
 
 .pro-box{
@@ -215,6 +241,19 @@ section{
   border-radius: 50%;
 }
 
+.profile_link{
+    font-size: 20px;
+}
+
+.profile_link svg{
+    fill: var(--welcome-ly-color1);
+    font-size: 50px;
+}
+
+.profile_link:hover{
+    background: linear-gradient(to bottom, var(--nav-ly-color2), var(--color2), var(--color3));
+}
+
 /* Media*/
 
 @media (max-width: 400px){
@@ -240,7 +279,7 @@ section{
     gap: 10px;
   }
 
- 
+
 }
 
 @media (max-width: 376px){
@@ -249,4 +288,3 @@ section{
   }
 }
 /* Animaciones*/
-
