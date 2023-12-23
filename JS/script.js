@@ -1,4 +1,11 @@
+/*
+    La función agregaProyectos sirve para agregar todos los proyectos que pueden ser recuperados de una ruta especifica declarada por
+    un archivo externo que funciona como lista de proyectos.
+
+
+*/
 function agregarProyectos() {
+  // projectTile es la variable que recupera el elemento HTML donde se colocara el código generado en esta función con las ligas a los Proyectos
   var projectTile = document.querySelector('.project-tile');
   var proyectos = JSON.parse(
     fetch('JSON/project.json').then(response => response.text())
@@ -21,7 +28,7 @@ function agregarProyectos() {
   proyectoHTML = `
     <a href="" target="_blank">
       <div class="pro-box">
-        <img src="https://cdn.freecodecamp.org/testable-projects-fcc/images/tribute.jpg" alt="Imagen random" />
+        <img src="img/Cesar.png" alt="Imagen random" />
         <p class="project-title">Más proyectos...</p>
       </div>
     </a>

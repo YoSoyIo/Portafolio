@@ -1,4 +1,4 @@
-Project 1 https://example.com/project1.jpg Imagen de Proyecto 1 https://example.com/project1
+Project 1 img/Cesar.PNG Imagen de Proyecto 1 Paginas/cesar.html
 Project 2 https://example.com/project2.jpg Imagen de Proyecto 2 https://example.com/project2
 Project 3 https://example.com/project3.jpg Imagen de Proyecto 3 https://example.com/project3
 Project 4 https://example.com/project1.jpg Imagen de Proyecto 1 https://example.com/project1
