@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cifrado de César</title>
+  <style>
+	:root{
+		--color-principal: #276E90;
+		--color-complementario1: #CECFC9;
+		--color-oscuro: #0A3143;
+		--color-claro: #EFEFEF;
+	}
+	
+	body {
+		background-color: var(--color-principal);
+		font-family: sans-serif;
+		color: var(--color-claro);
+	}
+
+	.container {
+	  width: 500px;
+	  margin: 0 auto;
+	}
+
+	h1 {
+	  text-align: center;
+	  margin-top: 0;
+	}
+
+	.text {
+	    padding: 20px;
+		border: 1px solid var(--color-complementario1);
+		background-color: var(--color-oscuro);
+		border-radius: 10px;
+	}
+
+	h2 {
+	  margin-top: 0;
+	}
+
+	textarea{
+		height: 100px;
+		resize: none;
+		width: 100%;
+	    margin-bottom: 10px;
+	}
+
+	pre {
+	    white-space: pre-wrap;
+		overflow-y: scroll;
+		height: 200px;
+		border: 1px solid #ccc;
+		padding: 10px;
+		background-color: black;
+		color: green;
+		font-family: courier new;
+		font-size: 13px;
+	}
+
+	form {
+		margin-top: 10px;
+		background-color: var(--color-oscuro);
+		border: 1px solid var(--color-complementario1);
+		padding: 20px;
+		color: var(--color-claro);
+		border-radius: 10px;
+	}
+
+	input[type="file"]::file-selector-button {
+	  background-color: #ff9c01;
+	  color: #fff;
+	  padding: 10px;
+	  border-radius: 4px;
+	  cursor: pointer;
+	  width: 50%;
+	}
+
+	input[type="file"]::file-selector-button::before {
+	  content: "\f002";
+	  font-family: FontAwesome;
+	  font-size: 20px;
+	  color: #fff;
+	  padding-right: 10px;
+	}
+
+	input[type="file"]::file-selector-button::after {
+	  content: " Seleccionar archivo";
+	  font-size: 12px;
+	  color: #999;
+	}
+
+	button[type="submit"] {
+	  cursor: pointer;
+	  padding: 10px;
+	  border: 1px solid green;
+	  border-radius: 4px;
+	  background-color: green;
+	  color: white;
+	}
+	
+	button {
+	  cursor: pointer;
+	  padding: 10px;
+	  border-radius: 4px;
+	  color: white;
+	  border: 1px solid blue;
+	  background-color: blue;
+	}
+	
+	button#cifrar {
+	  border: 1px solid red;
+	  background-color: red;
+	}
+	
+	button#descifrar {
+	  border: 1px solid green;
+	  background-color: green;
+	}
+  </style>
+</head>
+<body>
+  <h1>Cifrado de César</h1>
+
+  <div class="container">
+    <div class="text">
+      <h2>Cifrado de texto</h2>
+      <textarea type="text" id="texto" placeholder="Texto a cifrar"></textarea>
+      <input type="number" id="desplazamiento" placeholder="Desplazamiento">
+      <button id="cifrar">Cifrar</button>
+      <button id="descifrar">Descifrar</button>
+	  <button id="limpiar" onclick="limpiar();">Limpiar</button>
+      <pre id="resultado"></pre>
+    </div>
+	<form action="/" method="post" enctype="multipart/form-data">
+		<input type="file" name="archivo">
+		<button type="submit">Cargar</button>
+		<button type="button" onclick="exportar();">Exportar</button>
+	  </form>
+  </div>
+	
+  <script>
+	//letras_validas = "abcdefghijklmnñopqrstuvwxyz1234567890.,;¿? ";
+	
+	if (document.querySelector("form") !== null) {
+      document.querySelector("form").addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const archivo = document.querySelector("input[name='archivo']").files[0];
+
+        const reader = new FileReader();
+        reader.readAsText(archivo);
+
+        reader.onload = () => {
+          const contenido = reader.result;
+
+          texto.value = contenido;
+        };
+      });
+    }
+	
+	function limpiar(){
+		texto.value = "";
+	}
+	
+    function cifrar(texto, desplazamiento) {
+      let resultado = "";
+      for (let letra of texto) {
+        let codigo;
+	    if(desplazamiento > 0){
+		   codigo = parseInt(letra.charCodeAt(0),10) + parseInt(desplazamiento, 10);
+	    }else{
+	  	   codigo = parseInt(letra.charCodeAt(0),10) + desplazamiento;
+	    }
+		if(letra == '\n' || letra == 10){
+			resultado += letra;
+			continue;
+		}
+	    resultado += String.fromCharCode(codigo);
+      }
+      return resultado;
+    }
+
+    function descifrar(texto, desplazamiento) {
+      return cifrar(texto, -desplazamiento);
+    }
+
+    let texto = document.getElementById("texto");
+    let desplazamiento = document.getElementById("desplazamiento");
+    let resultado = document.getElementById("resultado");
+
+    let cifrarTexto = () => {
+      let textoCifrado = cifrar(texto.value, desplazamiento.value);
+      resultado.textContent = textoCifrado;
+    };
+
+    let descifrarTexto = () => {
+      let textoDescifrado = descifrar(texto.value, desplazamiento.value);
+      resultado.textContent = textoDescifrado;
+    };
+	
+	function exportar(){
+		const content = resultado.innerHTML;
+		const archivo = new Blob([content], { type: 'text/plain' });
+		
+		const a = document.createElement("a");
+		const url = URL.createObjectURL(archivo);
+		a.href = url;
+		a.download = "archivoCifrado.txt";
+		a.click();
+		URL.revokeObjectURL(url);
+	}
+
+    document.getElementById("cifrar").addEventListener("click", cifrarTexto);
+    document.getElementById("descifrar").addEventListener("click", descifrarTexto);
+	
+	texto.addEventListener("keyup", cifrarTexto);
+	desplazamiento.addEventListener("change", cifrarTexto);
+  </script>
+</body>
+</html>
