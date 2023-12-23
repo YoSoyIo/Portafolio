@@ -10,6 +10,8 @@ function agregarProyectos(cantidad) {
         </a>
       `;
 
+      projectTile.innerHTML += proyectoHTML;
+
       for (var i = 2; i <= cantidad; i++) {
         proyectoHTML = `
           <a href="" target="_blank">
