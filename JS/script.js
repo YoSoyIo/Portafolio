@@ -11,7 +11,7 @@ function agregarProyectos(cantidad) {
       `;
 
       for (var i = 2; i <= cantidad; i++) {
-        var proyectoHTML = `
+        proyectoHTML = `
           <a href="" target="_blank">
             <div class="pro-box">
               <img src="https://cdn.freecodecamp.org/testable-projects-fcc/images/tribute.jpg" alt="Imagen random" />
