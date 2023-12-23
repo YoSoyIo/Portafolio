@@ -1,7 +1,16 @@
 function agregarProyectos(cantidad) {
       var projectTile = document.querySelector('.project-tile');
 
-      for (var i = 1; i <= cantidad; i++) {
+      var proyectoHTML = `
+        <a href="Paginas/cesar.html" target="_blank">
+          <div class="pro-box">
+            <img src="img/Cesar.PNG" alt="Imagen random" />
+            <p class="project-title">Proyecto 1</p>
+          </div>
+        </a>
+      `;
+
+      for (var i = 2; i <= cantidad; i++) {
         var proyectoHTML = `
           <a href="" target="_blank">
             <div class="pro-box">
