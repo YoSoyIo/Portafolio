@@ -4,15 +4,21 @@ function agregarProyectos(cantidad) {
       var proyectoHTML = `
         <a href="Paginas/cesar.html" target="_blank">
           <div class="pro-box">
-            <img src="img/Cesar.PNG" alt="Imagen random" />
+            <img src="img/Cesar.PNG" alt="Imagen miniatura" />
             <p class="project-title">Proyecto 1</p>
+          </div>
+        </a>
+        <a href="Paginas/ONE/2035-logica-programacion-2-Aula1/index.html" target="_blank">
+          <div class="pro-box">
+            <img src="img/Adivina.png" alt="Imagen miniatura" />
+            <p class="project-title">Proyecto 2</p>
           </div>
         </a>
       `;
 
       projectTile.innerHTML += proyectoHTML;
 
-      for (var i = 2; i <= cantidad; i++) {
+      for (var i = 3; i <= cantidad; i++) {
         proyectoHTML = `
           <a href="" target="_blank">
             <div class="pro-box">
