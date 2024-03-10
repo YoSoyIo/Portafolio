@@ -14,17 +14,23 @@ function agregarProyectos(cantidad) {
             <p class="project-title">Proyecto 2</p>
           </div>
         </a>
-        <a href="Paginas/ONE/2035-logica-programacion-2-Aula1/index.html" target="_blank">
+        <a href="Paginas/ONE/Desafio/index.html" target="_blank">
           <div class="pro-box">
             <img src="img/Adivina.png" alt="Imagen miniatura" />
             <p class="project-title">Proyecto 3</p>
+          </div>
+        </a>
+        <a href="Paginas/ONE/2035-logica-programacion-2-Aula1/index.html" target="_blank">
+          <div class="pro-box">
+            <img src="img/desafio.png" alt="Imagen miniatura" />
+            <p class="project-title">Proyecto 4</p>
           </div>
         </a>
       `;
 
       projectTile.innerHTML += proyectoHTML;
 
-      for (var i = 3; i <= cantidad; i++) {
+      for (var i = 4; i <= cantidad; i++) {
         proyectoHTML = `
           <a href="" target="_blank">
             <div class="pro-box">
