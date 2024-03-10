@@ -30,7 +30,7 @@ function agregarProyectos(cantidad) {
 
       projectTile.innerHTML += proyectoHTML;
 
-      for (var i = 4; i <= cantidad; i++) {
+      for (var i = 5; i <= cantidad; i++) {
         proyectoHTML = `
           <a href="" target="_blank">
             <div class="pro-box">
