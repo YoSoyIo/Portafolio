@@ -55,7 +55,6 @@ function encriptar(){
             contenedor_info.className = "inactivo";
             contenedor_msg.className = "activo";
 
-            console.log(mensaje);
             mensaje_encriptado.innerHTML = mensaje;
         }
     }
@@ -85,14 +84,39 @@ function desencriptar(){
     La funcion de copiar podr[a permitir copiar el texto encriptado al portapapeles
 */ 
 
-function copiar(){ 
-    let texto_mensaje = mensaje_encriptado.innerHTML;
+function copiar() {
+    // Obtenemos el texto del mensaje encriptado
+    const textoMensaje = mensaje_encriptado.textContent;
+  
+    // Asignamos el texto al campo sin encriptar
+    mensaje_sin_encriptar.value = textoMensaje;
+    
+    // Verificamos si la función writeText está disponible
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      // Intentamos copiar al portapapeles
+      navigator.clipboard.writeText(textoMensaje)
+        .then(() => {
+          console.log("Contenido copiado al portapapeles");
+          // Limpiamos el mensaje encriptado
+          mensaje_encriptado.textContent = "";
+          // Mostramos una alerta al usuario
+          alert("Se ha copiado correctamente al portapapeles");
+        })
+        .catch(error => {
+          console.error("Error al copiar:", error);
+          // Mostrar mensaje de error al usuario
+          alert("No se pudo copiar al portapapeles. Inténtalo nuevamente.");
+        });
+    } else {
+      console.error("La función writeText no está disponible");
+      // Mostrar mensaje de error al usuario
+      alert("Copiar al portapapeles no es compatible con este navegador.");
+    }
 
-    mensaje_sin_encriptar.value = texto_mensaje;
-    mensaje_encriptado.innerHTML = "";
-
-    alert("Se ha copiado correctamente al porta papeles");
-}
+    mensaje_encriptado.textContent = "";
+  }
+  
+  
 
 /* 
     La funcion limpiar restablecer[a todo a su forma inicial
