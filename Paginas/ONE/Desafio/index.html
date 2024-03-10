@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Challenge ONE Principiante en programación</title>
+</head>
+<body>
+    <header>
+        <div id="encabezado">
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+    </header>
+    <section>
+        <div id="div_elementos">
+            <div id="div_mensaje">
+                <img id="img_logo_alura" src="imagenlogoalura.png" alt="Imagen de logo de alura">
+                <textarea name=""  id="txa_mensaje" cols="30" rows="10" placeholder="Ingrese el mensaje para encriptar: "></textarea>
+                <p id="lbl_info"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>Solo letras minúsculas y sin acentos</p>
+                <div class="div_botones">
+                    <button type="button" id="btn_codificar" onclick="encriptar();">
+                        Encriptar
+                    </button>
+                    <button type="button" id="btn_desencriptar" onclick="desencriptar();">
+                        Desencriptar
+                    </button>
+                </div>
+            </div>
+            <div id="div_encriptacion">
+                <div id="contenedor_mensaje_encriptado" class="activo">
+                    <img src="hackerimg.png" alt="Imagen de un perrito hackeando" id="img_perro">
+                    <p id="lbl_mensaje">
+                        <strong><b>No se ha encontrado ningun mensaje</b></strong><br>
+                        Ingresa el mensaje que desees encriptar o desencriptar.
+                    </p>
+                </div>
+                <div id="contenedor_mensaje_encriptado_aplicado" class="inactivo">
+                    <p id="lbl_mensaje_encriptado">
+                    </p>
+                    <div class="div_botones">
+                        <button type="button" id="btn_copiar" onclick="copiar();">
+                            Copiar
+                        </button>
+                        <button type="button" id="btn_limpiar" onclick="limpiar();">
+                            Limpiar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <script src="script.js"></script>
+    </footer>
+</body>
+</html>

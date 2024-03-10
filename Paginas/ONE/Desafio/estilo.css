@@ -1,0 +1,265 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: aliceblue;
+}
+
+#div_elementos{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.activo{
+    display: flex;
+}
+
+.inactivo{
+    display: none;
+}
+
+button{
+    border: 2px solid rgb(14 54 103);
+    width: 45%;
+    border-radius: 8px;
+    height: 40px;
+    font-style: bold;
+}
+
+button#btn_codificar {
+    background-color: rgb(14 54 103);
+    color: rgb(14 54 103);
+    color: white;
+}
+
+button#btn_codificar:hover {
+    background-color: orange;
+    color: black;
+}
+
+button#btn_desencriptar{
+    color: rgb(14 54 103);
+}
+
+button#btn_desencriptar:hover{
+    background-color: orange;
+    color: black;
+}
+
+button#btn_copiar, button#btn_limpiar{
+    background: white;
+    color: rgb(14 54 103);
+}
+
+button#btn_copiar:hover, button#btn_limpiar:hover{
+    background-color: orange;
+    color:  rgb(14 54 103);
+}
+
+#img_logo_alura{
+    position: absolute;
+    width: 3%;
+    top: 10px;
+    left: 10px;
+}
+
+#div_mensaje{
+    display: flex;
+    width: 45%;
+    height: 90%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0 0 5%;
+}
+
+#txa_mensaje{
+    width: 95%;
+    height: 80%;
+    font-size: 25px;
+    color: rgb(14 54 103);
+    border: none;
+    resize: none;
+}
+
+#txa_mensaje:focus-visible {
+    outline:none !important;
+    outline-width: 0 !important;
+    border: none;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+#txa_mensaje::placeholder{
+    color: rgb(14 54 103);
+}
+
+#lbl_info{
+    width: 95%;
+    font-size: 10px;
+    padding: 10px;
+}
+
+#lbl_info:hover{
+    color: red;
+}
+
+.div_botones {
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: transparent;
+}
+
+
+
+#div_encriptacion{
+    display: flex;
+    width: 50%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+#contenedor_mensaje_encriptado{
+    width: 80%;
+    height: 90%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: 4px 4px 20px 12px #cbd4dc;
+}
+
+#contenedor_mensaje_encriptado_aplicado{
+    width: 80%;
+    height: 90%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: 4px 4px 20px 12px #cbd4dc;
+}
+
+#lbl_info>svg{
+    width: 12px;
+}
+
+#img_perro{
+    width: 300px;
+    border-radius: 10%;
+    width: 70%;
+}
+
+#lbl_mensaje{
+    text-align: center;
+    font: message-box;
+    width: 70%;
+    background: white;
+    font-size: 20px;
+}
+
+#lbl_mensaje_encriptado{
+    text-align: justify;
+    font: message-box;
+    width: 70%;
+    height: 80%;
+    background: white;
+    font-size: 20px;
+}
+
+#lbl_mensaje b{
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10 0;
+    background: white;
+}
+
+@media screen and (max-width:680px) {
+    #div_elementos{
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    #div_mensaje{
+        width: 90%;
+        padding: 10% 0 0 0;
+    }
+
+    #div_encriptacion{
+        width: 90%;
+    }
+
+    #contenedor_mensaje_encriptado{
+        width: 90%;
+    }
+    
+    #contenedor_mensaje_encriptado_aplicado{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width:480px) {
+    #div_elementos{
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    #txa_mensaje{
+        font-size: 15px;
+    }
+
+    #div_mensaje{
+        width: 90%;
+        padding-top: 15%;
+    }
+
+    #div_encriptacion{
+        width: 90%;
+    }
+
+    #contenedor_mensaje_encriptado{
+        width: 90%;
+    }
+    
+    #contenedor_mensaje_encriptado_aplicado{
+        width: 90%;
+        flex-direction: row;
+    }
+
+    .div_botones{
+        flex-direction: column;
+        width: 80%;
+    }
+
+    button{
+        width: 90%;
+        margin-bottom: 5px;
+    }
+    
+    #lbl_mensaje_encriptado{
+        height: 70%;
+    }
+
+}
