@@ -16,7 +16,7 @@ function agregarProyectos(cantidad) {
         </a>
         <a href="Paginas/ONE/Desafio/index.html" target="_blank">
           <div class="pro-box">
-            <img src="img/Desafio.png" alt="Imagen miniatura" />
+            <img src="img/desafio.png" alt="Imagen miniatura" />
             <p class="project-title">Proyecto 3</p>
           </div>
         </a>
