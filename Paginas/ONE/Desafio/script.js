@@ -78,6 +78,9 @@ function desencriptar(){
     regex = /ufat/gi;
     
     mensaje_encriptado.innerHTML = texto_mensaje.replaceAll(regex, 'u');
+    
+    contenedor_info.className = "inactivo";
+    contenedor_msg.className = "activo";
 }
 
 /* 
