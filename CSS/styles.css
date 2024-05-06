@@ -168,6 +168,8 @@ section{
 div.texto_info {
   padding: 12px;
   text-align: justify;
+  width: 20%;
+  font-size: 16px;
 }
 
 /* Projects section*/
@@ -248,6 +250,7 @@ div.texto_info {
   text-decoration: none;
   color: aliceblue;
   font-weight: lighter;
+  padding-top: 10px;
 }
 
 .profile p{
