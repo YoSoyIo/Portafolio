@@ -172,6 +172,16 @@ div.texto_info {
   font-size: 16px;
 }
 
+div#Info_forma {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+div#Info_forma:nth-child(0){
+  background-color: antiquewhite;
+}
+
 /* Projects section*/
 #projects{
     background-color: #4682b478;
@@ -271,6 +281,7 @@ div.texto_info {
 .profile_link svg{
     fill: var(--welcome-ly-color1);
     font-size: 50px;
+    height: 50px;
 }
 
 .profile_link:hover{

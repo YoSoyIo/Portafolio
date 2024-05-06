@@ -53,6 +53,22 @@ function agregarProyectos(cantidad) {
       `;
 
       projectTile.innerHTML += proyectoHTML;
+
+      for(var i = 1; i < 5; i++){
+        document.getElementById("perfil"+i).style.backgroundColor = generarNuevoColor();
+      }
+    }
+
+    function generarNuevoColor(){
+      var simbolos, color;
+      simbolos = "0123456789ABCDEF";
+      color = "#";
+    
+      for(var i = 0; i < 6; i++){
+        color = color + simbolos[Math.floor(Math.random() * 16)];
+      }
+    
+      return color;
     }
 
     // Ejemplo: agregar 3 proyectos
