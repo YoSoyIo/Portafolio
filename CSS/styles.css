@@ -136,14 +136,20 @@ section{
   font-size: 5vh;
 }
 
+#pefiles-div{
+  display: flex;
+}
+
 .code{
-  display: block;
+  display: inline-block;
   text-align: center;
-  font-size: 5vh;
+  /* font-size: 5vh; */
   font-family: courier new;
-  color: var(--color4);
+  color: white;
   width: auto;
   white-space: wrap;
+  border-radius: 25px;
+  padding: 10px;
 }
 
 /* Aboutme section*/
