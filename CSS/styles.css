@@ -303,7 +303,7 @@ div#Info_forma:nth-child(0){
   div#Info_forma {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 }
 
