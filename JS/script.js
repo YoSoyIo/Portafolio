@@ -26,15 +26,21 @@ function agregarProyectos(cantidad) {
             <p class="project-title">Proyecto 4</p>
           </div>
         </a>
+        <a href="Paginas/ONE/PingPong/index.html" target="_blank">
+          <div class="pro-box">
+            <img src="img/pingpong.png" alt="Imagen miniatura" />
+            <p class="project-title">Proyecto 5</p>
+          </div>
+        </a>
       `;
 
       projectTile.innerHTML += proyectoHTML;
 
-      for (var i = 5; i <= cantidad; i++) {
+      for (var i = 6; i <= cantidad; i++) {
         proyectoHTML = `
           <a href="" target="_blank">
             <div class="pro-box">
-              <img src="https://cdn.freecodecamp.org/testable-projects-fcc/images/tribute.jpg" alt="Imagen random" />
+              <img src="img/masproyectos.png" alt="Imagen random" />
               <p class="project-title">Proyecto ${i}</p>
             </div>
           </a>
@@ -46,7 +52,7 @@ function agregarProyectos(cantidad) {
       proyectoHTML = `
         <a href="" target="_blank">
           <div class="pro-box">
-            <img src="https://cdn.freecodecamp.org/testable-projects-fcc/images/tribute.jpg" alt="Imagen random" />
+            <img src="img/masproyectos.jpg" alt="Imagen random" />
             <p class="project-title">Más proyectos...</p>
           </div>
         </a>
