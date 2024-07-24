@@ -89,6 +89,7 @@ section{
 
 #container-tool {
   display: flex;
+  padding: 0px 0px 0 10%;
 }
 
 .icono-tool {
