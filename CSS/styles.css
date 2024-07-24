@@ -87,15 +87,28 @@ section{
   float: left;
 }
 
+#container-tool {
+  display: flex;
+}
+
+.icono-tool {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+}
+
 .icono-tool svg{ 
-  width: 5%;
-  background-color: #06e8ff;
-  border: 1px solid;
+  width: 60px;
+  height: 60px;
+  background-color: #2a34c6;
+  border: 2px solid;
   border-radius: 10px;
 }
 
 .footer-icon{
-  
+  color: white;
 }
 
 #navbar li:hover{

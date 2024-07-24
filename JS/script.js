@@ -97,12 +97,11 @@ async function generarLenguajes(){
   const contenedor = document.getElementById("container-tool");
   const respuesta = await fetch('JSON/herramientas.json'); // Ruta completa al archivo
   const datosJSON = await respuesta.json();
-  console.log("Hola");
   
   contenedor.innerHTML = "";
 
   // Recorrer el array de personas del JSON
-  for (const herramientaJSON of datosJSON) {
+  for (const herramientaJSON of datosJSON.listaHerramientas) {
     const nombre = herramientaJSON.nombre;
     const imagen = herramientaJSON.imagenSVG;
 
