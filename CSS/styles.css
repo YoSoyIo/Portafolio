@@ -87,6 +87,17 @@ section{
   float: left;
 }
 
+.icono-tool svg{ 
+  width: 5%;
+  background-color: #06e8ff;
+  border: 1px solid;
+  border-radius: 10px;
+}
+
+.footer-icon{
+  
+}
+
 #navbar li:hover{
   /*color: var(--nav-ly-color);*/
   background: linear-gradient(to top,white, transparent 20%);
@@ -154,13 +165,13 @@ section{
 
 /* Aboutme section*/
 #about-section{
-    background-color: #4682b478;
-    height: auto;
-    color: var(--project-color);
-    padding-left: 0;
-    margin-left: 10%;
-    width: 80%;
-    border-radius: 20px;
+  background-color: #4682b478;
+  height: 80vh;
+  color: var(--project-color);
+  padding-left: 0;
+  margin-left: 5%;
+  width: 90%;
+  border-radius: 20px;
 }
 
 #about-section h2{
