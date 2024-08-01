@@ -3,8 +3,10 @@ async function agregarProyectos(cantidad) {
   const respuesta = await fetch('JSON/proyectos.json'); // Ruta completa al archivo
   const datosJSON = await respuesta.json();
   let color;
+  let contador = 0;
 
   contenedor.innerHTML = "";
+
 
   // Recorrer el array de personas del JSON
   for (const proyectosJson of datosJSON.proyectos) {
@@ -20,16 +22,34 @@ async function agregarProyectos(cantidad) {
             <p class="project-title">${nombre}</p>
           </div>
         </a>`; 
+    if(cantidad < 1){
+      contador += 1;
+
+      if(contador > 4){
+        break;
+      }
+    }
   }
 
-  contenedor.innerHTML += `
-        <a href="" target="_blank">
+  if(cantidad < 1){
+    contenedor.innerHTML += `
+        <a onclick="agregarProyectos(1);">
           <div class="pro-box">
             <img src="img/masproyectos.jpg" alt="Imagen random" />
             <p class="project-title">Más proyectos...</p>
           </div>
         </a>
       `;
+  }else{
+    contenedor.innerHTML += `
+        <a onclick="agregarProyectos(0);">
+          <div class="pro-box">
+            <img src="img/masproyectos.jpg" alt="Imagen random" />
+            <p class="project-title">Menos proyectos...</p>
+          </div>
+        </a>
+      `;
+  }
 
   for (var i = 1; i < 5; i++) {
     color = generarNuevoColor();
@@ -97,5 +117,5 @@ function generarNuevoColor() {
 }
 
 // Ejemplo: agregar 3 proyectos
-agregarProyectos(5);
+agregarProyectos(0);
 generarLenguajes();
