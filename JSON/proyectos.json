@@ -1,0 +1,34 @@
+{
+    "proyectos":[
+        {
+            "nombre": "Cofificación Caésar",
+            "link": "Paginas/cesar.html",
+            "imagen": "img/Cesar.PNG",
+            "alt": "Imagen de muestra codificacion Cesar"
+        },
+        {
+            "nombre": "Barbería Alura",
+            "link": "Paginas/ONE/1769-HTML5 y CSS3 parte4 - aula6/index.html",
+            "imagen": "img/barberia.png",
+            "alt": "Imagen muestra de la barbería ALURA"
+        },
+        {
+            "nombre": "Encriptador ALURA",
+            "link": "Paginas/ONE/Desafio/index.html",
+            "imagen": "img/desafio.png",
+            "alt": "Imagen muestra del Encriptador Alura"
+        },
+        {
+            "nombre": "Juego de número secreto",
+            "link": "Paginas/ONE/2035-logica-programacion-2-Aula1/index.html",
+            "imagen": "img/Adivina.png",
+            "alt": "Imagen muestra del juego Alura"
+        },
+        {
+            "nombre": "Juego de Ping Pong",
+            "link": "Paginas/ONE/PingPong/index.html",
+            "imagen": "img/pingpong.png",
+            "alt": "Imagen muestra del juego de Ping Pong"
+        }
+    ]
+}

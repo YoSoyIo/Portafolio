@@ -1,55 +1,28 @@
-function agregarProyectos(cantidad) {
-  var projectTile = document.querySelector(".project-tile");
+async function agregarProyectos(cantidad) {
+  const contenedor = document.querySelector(".project-tile");
+  const respuesta = await fetch('JSON/proyectos.json'); // Ruta completa al archivo
+  const datosJSON = await respuesta.json();
+  let color;
 
-  var proyectoHTML = `
-        <a href="Paginas/cesar.html" target="_blank">
-          <div class="pro-box">
-            <img src="img/Cesar.PNG" alt="Imagen miniatura" />
-            <p class="project-title">Proyecto 1</p>
-          </div>
-        </a>
-        <a href="Paginas/ONE/1769-HTML5 y CSS3 parte4 - aula6/index.html" target="_blank">
-          <div class="pro-box">
-            <img src="img/barberia.png" alt="Imagen miniatura" />
-            <p class="project-title">Proyecto 2</p>
-          </div>
-        </a>
-        <a href="Paginas/ONE/Desafio/index.html" target="_blank">
-          <div class="pro-box">
-            <img src="img/desafio.png" alt="Imagen miniatura" />
-            <p class="project-title">Proyecto 3</p>
-          </div>
-        </a>
-        <a href="Paginas/ONE/2035-logica-programacion-2-Aula1/index.html" target="_blank">
-          <div class="pro-box">
-            <img src="img/Adivina.png" alt="Imagen miniatura" />
-            <p class="project-title">Proyecto 4</p>
-          </div>
-        </a>
-        <a href="Paginas/ONE/PingPong/index.html" target="_blank">
-          <div class="pro-box">
-            <img src="img/pingpong.png" alt="Imagen miniatura" />
-            <p class="project-title">Proyecto 5</p>
-          </div>
-        </a>
-      `;
+  contenedor.innerHTML = "";
 
-  projectTile.innerHTML += proyectoHTML;
+  // Recorrer el array de personas del JSON
+  for (const proyectosJson of datosJSON.proyectos) {
+    const nombre = proyectosJson.nombre;
+    const link = proyectosJson.link;
+    const imagen = proyectosJson.imagen;
+    const alt = proyectosJson.alt;
 
-  for (var i = 6; i <= cantidad; i++) {
-    proyectoHTML = `
-          <a href="" target="_blank">
-            <div class="pro-box">
-              <img src="img/masproyectos.png" alt="Imagen random" />
-              <p class="project-title">Proyecto ${i}</p>
-            </div>
-          </a>
-        `;
-
-    projectTile.innerHTML += proyectoHTML;
+    contenedor.innerHTML += `
+        <a href="${link}" target="_blank">
+          <div class="pro-box">
+            <img src="${imagen}" alt="${alt}" />
+            <p class="project-title">${nombre}</p>
+          </div>
+        </a>`; 
   }
 
-  proyectoHTML = `
+  contenedor.innerHTML += `
         <a href="" target="_blank">
           <div class="pro-box">
             <img src="img/masproyectos.jpg" alt="Imagen random" />
@@ -57,10 +30,6 @@ function agregarProyectos(cantidad) {
           </div>
         </a>
       `;
-
-  projectTile.innerHTML += proyectoHTML;
-
-  let color;
 
   for (var i = 1; i < 5; i++) {
     color = generarNuevoColor();
