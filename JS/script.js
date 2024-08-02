@@ -13,13 +13,26 @@ async function agregarProyectos(cantidad) {
     const nombre = proyectosJson.nombre;
     const link = proyectosJson.link;
     const imagen = proyectosJson.imagen;
+    const descripcion = proyectosJson.descripcion;
     const alt = proyectosJson.alt;
+    const listaHerramientas = proyectosJson.listaHerramientas;
+
+    let = listaJunta = "";
+    for(let i = 0; i < listaHerramientas.length; i += 1){
+      listaJunta += listaHerramientas[i]+`
+      
+      `;
+    }
 
     contenedor.innerHTML += `
         <a href="${link}" target="_blank">
           <div class="pro-box">
             <img src="${imagen}" alt="${alt}" />
+            <div id=herramientas-contenedor>
+              ${listaJunta}
+            </div>
             <p class="project-title">${nombre}</p>
+            <div style="display:none">${descripcion}</div>
           </div>
         </a>`; 
     if(cantidad < 1){
@@ -82,17 +95,15 @@ function obtenerColorOpuesto(colorHexadecimal) {
   return colorOpuestoHex;
 }
 
-async function generarLenguajes(){
+function generarLenguajes(listaHerramientas){
   const contenedor = document.getElementById("container-tool");
-  const respuesta = await fetch('JSON/herramientas.json'); // Ruta completa al archivo
-  const datosJSON = await respuesta.json();
   
   contenedor.innerHTML = "";
-
+  console.log(listaHerramientas.length);
   // Recorrer el array de personas del JSON
-  for (const herramientaJSON of datosJSON.listaHerramientas) {
-    const nombre = herramientaJSON.nombre;
-    const imagen = herramientaJSON.imagenSVG;
+  for (let i = 0; i < listaHerramientas.length; i += 1) {
+    const nombre = listaHerramientas[i].nombre;
+    const imagen = listaHerramientas[i].imagenSVG;
 
     contenedor.innerHTML += `
         <div class="icono-tool">
@@ -100,9 +111,7 @@ async function generarLenguajes(){
           <p class="footer-icon">${nombre}</p>
         </div>`; 
   }
-
 }
-
 
 function generarNuevoColor() {
   var simbolos, color;
@@ -116,6 +125,15 @@ function generarNuevoColor() {
   return color;
 }
 
-// Ejemplo: agregar 3 proyectos
-agregarProyectos(0);
-generarLenguajes();
+let lista = fetch('JSON/herramientas.json')
+  .then(response => response.json())
+  .then(data => {
+    let listaHerramientas = data.listaHerramientas;
+    agregarProyectos(0);
+    generarLenguajes(listaHerramientas);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+
+console.log(lista);
