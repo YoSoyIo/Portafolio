@@ -87,33 +87,6 @@ section{
   float: left;
 }
 
-#container-tool {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.icono-tool {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 10px;
-}
-
-.icono-tool svg{ 
-  width: 60px;
-  height: 60px;
-  background-color: #2a34c6;
-  border: 2px solid;
-  border-radius: 10px;
-}
-
-.footer-icon{
-  color: white;
-}
-
 #navbar li:hover{
   /*color: var(--nav-ly-color);*/
   background: linear-gradient(to top,white, transparent 20%);
@@ -219,7 +192,7 @@ div#Info_forma {
   align-items: flex-end;
   border-bottom: 10px solid #000;
   border-left: 10px solid #000;
-  background: #ffff;
+  background: #c3f6e6;
   padding-top: 20px;
 }
 
@@ -297,6 +270,39 @@ div#Info_forma {
   background-color: white;
   border: 1px solid;
   border-radius: 50%;
+}
+
+#container-tool {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.icono-tool {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.icono-tool svg{ 
+  width: 60px;
+  height: 60px;
+  background-color: #2a34c6;
+  border: 5px solid;
+  border-radius: 10px;
+}
+
+.icono-tool svg:hover{ 
+  background-color: #2ddbe4;
+  border: 2px solid;
+  border-radius: 15px;
+}
+
+.footer-icon{
+  color: white;
 }
 
 /* Footer section*/
