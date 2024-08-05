@@ -282,27 +282,28 @@ div#Info_forma {
 .icono-tool {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   padding: 10px;
+  width: 80px;
 }
 
 .icono-tool svg{ 
   width: 60px;
   height: 60px;
-  background-color: #2a34c6;
+  background-color: #fff;
   border: 5px solid;
   border-radius: 10px;
 }
 
 .icono-tool svg:hover{ 
-  background-color: #2ddbe4;
   border: 2px solid;
   border-radius: 15px;
 }
 
 .footer-icon{
   color: white;
+  font-size: 80%;
 }
 
 /* Footer section*/
