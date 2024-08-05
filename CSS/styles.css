@@ -205,6 +205,43 @@ div#Info_forma {
   height: 5rem;
 }
 
+/* Tools section*/
+
+#container-tool {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0 5%;
+}
+
+.icono-tool {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 10px;
+  width: 80px;
+}
+
+.icono-tool svg{ 
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  border: 5px solid;
+  border-radius: 10px;
+}
+
+.icono-tool svg:hover{ 
+  border: 2px solid;
+  border-radius: 15px;
+}
+
+.footer-icon{
+  color: white;
+  font-size: 80%;
+}
+
 /* Projects section*/
 #projects{
     background-color: #4682b478;
@@ -270,40 +307,6 @@ div#Info_forma {
   background-color: white;
   border: 1px solid;
   border-radius: 50%;
-}
-
-#container-tool {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.icono-tool {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
-  padding: 10px;
-  width: 80px;
-}
-
-.icono-tool svg{ 
-  width: 60px;
-  height: 60px;
-  background-color: #fff;
-  border: 5px solid;
-  border-radius: 10px;
-}
-
-.icono-tool svg:hover{ 
-  border: 2px solid;
-  border-radius: 15px;
-}
-
-.footer-icon{
-  color: white;
-  font-size: 80%;
 }
 
 /* Footer section*/
