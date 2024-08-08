@@ -14,12 +14,22 @@
   --color3: rgba(0, 0, 0, 1);
   --color4: rgba(117, 248, 255, 0.749);
   --project-color: rgba(255, 255, 255, 0.76);
+  --color-saludo: rgba(120, 165, 254, 0.9);
 }
 /*
   General section
 */
+
+html{
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
+}
+
+section {
+  padding-top: 5%;
 }
 
 #sidebar {
@@ -42,17 +52,12 @@ body{
   margin: 0px;
   padding: 0px;
   background-color: var(--color1);
-  width: 100vw;
+  width: 99vw;
   height: auto;
   display: flex;
   flex-direction: column;
 }
 
-section{
-  padding: 0;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
 /* Nav Bar Section*/
 
 #navbar{
@@ -67,6 +72,7 @@ section{
     var(--color3));
   min-width: 300px;
   min-height: 60px;
+  z-index: 10;
 }
 
 #navbar ul{
@@ -81,15 +87,30 @@ section{
   padding-left: 1vw;
   padding-right: 1vw;
   height: 100%;
+  position: relative;
+}
+
+.nav-link::before{
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  visibility: hidden;
+  transition: all 0.3s ease-in-out 0s;
+  color: var(--nav-ly-color);
+  background: linear-gradient(to top,white, transparent 300px);
+}
+
+.nav-link:hover::before{
+  visibility: visible;
+  width: 100%;
 }
 
 #navbar li.left{
   float: left;
-}
-
-#navbar li:hover{
-  /*color: var(--nav-ly-color);*/
-  background: linear-gradient(to top,white, transparent 20%);
 }
 
 #navbar a{
@@ -109,12 +130,70 @@ section{
 
 /* Welcome section*/
 
+.saludo-contenedor{
+  position: relative;
+  color: var(--welcome-ly-color1);
+  border: none;
+  padding: 18px 40px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.5s ease;
+  width: 80%;
+  margin-bottom: 5px;
+  background-color: transparent;
+}
+
+.saludo-contenedor:hover{
+  letter-spacing: 5px;
+  color: var(--color4);
+  background-color: var(--nav-ly-color2);
+  animation: box 3s infinite;
+  box-shadow: 0 0 50px var(--color4);
+  border: 2px solid  var(--color4);
+}
+
+.saludo-contenedor::before{
+  content: "";
+  position: absolute;
+  inset: 2px;
+}
+
+.texto-hover{
+  position: relative;
+  z-index: 1;
+}
+
+.saludo-contenedor i{
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.saludo-contenedor i::before{
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 80%;
+  width: 10px;
+  height: 2px;
+  border: 2px solid  var(--nav-ly-color);
+  transition: all 0.3s ease;
+}
+
+.saludo-contenedor:hover i::before{
+  left: 20%;
+  width: 15px;
+  animation: move 3s infinite;
+  background-color: var(--nav-ly-color2);
+  border: 2px solid  var(--color4);
+}
+
 .wel-div{
   height: 100vh;
   background-image: url("https://concepto.de/wp-content/uploads/2018/09/lenguaje-de-programaci%C3%B3n-e1537466894547.jpg");
   background-repeat: no-repeat;
   background-size:cover;
-  color: var(--welcome-ly-color1);
 }
 
 .wel-div-dif{
@@ -136,12 +215,50 @@ section{
   /*font-size: 5vh;*/
 }
 
-#pefiles-div{
-  display: flex;
+#cont-cargos{
+  height: 50px;
+  overflow: hidden;
+  margin-top: 5%;
+}
+
+#perfiles-div{
+  position: relative;
+  animation: text-animation 10s linear 0s infinite alternate;
+}
+
+#perfiles-div > p > span{
+  display: inline-block;
+  height: 50px;
+  font-size: 30px;
+  padding: 10px;
+  color: var(--welcome-ly-color1);
+  border-radius: 50px;
+}
+
+#perfiles-div #perfil1 span{
+  background-color: red;
+}
+
+#perfiles-div #perfil2 span{
+  background-color: green;
+}
+
+#perfiles-div #perfil3 span{
+  background-color: blue;
+}
+
+#perfiles-div #perfil4 span{
+  background-color: yellow;
+  color: var(--nav-ly-color2);
+}
+
+#perfiles-div #perfil5 span{
+  background-color: aqua;
+  color: var(--nav-ly-color2);
 }
 
 .code{
-  display: inline-block;
+  /*display: inline-block;
   text-align: center;
   font-size: 2vh;
   font-family: courier new;
@@ -149,20 +266,22 @@ section{
   width: auto;
   white-space: wrap;
   border-radius: 25px;
-  padding: 10px;
+  padding: 10px;*/
 }
 
+
+
 /* About me section*/
+
 #about-section{
-  background-color: #4682b478;
+  background-color: var(--color1);
   height: auto;
   color: var(--project-color);
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 50px;
-  margin-left: 5%;
-  width: 90%;
-  border-radius: 20px;
+  margin-left: 0%;
+  width: 100%;
 }
 
 #about-section h2{
@@ -188,13 +307,95 @@ div.texto_info:hover {
 
 div#Info_forma {
   display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  border-bottom: 10px solid #000;
-  border-left: 10px solid #000;
-  background: #c3f6e6;
+  flex-direction: column;
+  align-items: center;
+  background: transparent;
   padding-top: 20px;
 }
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  background: transparent;
+  height: 20%;
+}
+
+/* Slides */
+.mySlides {
+  display: none;
+  padding: 80px;
+  text-align: center;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: var(--welcome-ly-color1);
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+  color: var(--color4);
+  border: 1px solid var(--color4);
+  border-radius: 20%;
+  box-shadow: 0 0 50px var(--color4);
+}
+
+/* The dot/bullet/indicator container */
+.dot-container {
+    text-align: center;
+    padding: 20px;
+    background: transparent;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: var(--nav-ly-color2);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle */
+.active, .dot:hover {
+  color: var(--color4);
+  border: 1px solid var(--color4);
+  border-radius: 50%;
+  box-shadow: 0 0 50px var(--color4);
+}
+
+/* Add an italic font style to all quotes */
+.mySlides q {
+  height: 200px;
+  font-style: italic;
+  display: block;
+  text-decoration-style: solid;
+  font-size: 3vh;
+}
+
+/* Add a blue color to the author */
+.author {color: cornflowerblue;}
 
 .eje-y-grafica{
   width: 25px;
@@ -206,6 +407,10 @@ div#Info_forma {
 }
 
 /* Tools section*/
+
+#Tools-section{
+  background-color: var(--color-saludo);
+}
 
 #container-tool {
   display: flex;
@@ -244,13 +449,11 @@ div#Info_forma {
 
 /* Projects section*/
 #projects{
-    background-color: #4682b478;
-    height: auto;
-    color: var(--project-color);
-    padding-left: 0;
-    margin-left: 10%;
-    width: 80%;
-    border-radius: 20px;
+  background-color: var(--color1);
+  height: auto;
+  color: var(--project-color);
+  padding-left: 0;
+  width: 100%;
 }
 
 #projects h2{
@@ -358,6 +561,23 @@ div#Info_forma {
 
 /* Media*/
 @media (max-width: 600px){
+
+  body{
+    width: 100vw;
+  }
+
+  #welcome-section h1{
+    font-size: 5vh;
+  }
+
+  #cont-cargos{
+    height: 70px;
+  }
+
+  #perfiles-div > p > span{
+    font-size: 20px;
+  }
+
   div.texto_info {
     width: 90%;
   }
@@ -366,6 +586,18 @@ div#Info_forma {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .mySlides{
+    padding: 0 30px 0 30px;
+  }
+
+  .mySlides q {
+    height: 300px;
+    font-style: italic;
+    display: block;
+    text-decoration-style: solid;
+    font-size: 2vh;
   }
 
   .eje-y-grafica{
@@ -413,3 +645,11 @@ div#Info_forma {
   }
 }
 /* Animaciones*/
+
+@keyframes text-animation {
+  100% {top:0px;}
+  75%  {top:-200px;}
+  50%  {top:-200px;}
+  25%  {top:0px;}
+  0%   {top:0px;}
+}

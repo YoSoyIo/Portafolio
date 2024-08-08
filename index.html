@@ -13,21 +13,37 @@
 <body>
   <nav id="navbar">
     <ul>
-      <li><a href="#redes">Contacto</a></li>
-      <li><a href="https://yosoyio.github.io/Curriculum/">Formación</a></li>
-      <li><a href="#projects">Proyectos</a></li>
-      <li class="left"><a href="#welcome-section">Inicio</a></li>
+      <li class="nav-link"><a href="#redes">Contacto</a></li>
+      <li class="nav-link"><a href="#about-section">Yo</a></li>
+      <li class="nav-link"><a href="#projects">Proyectos</a></li>
+      <li class="nav-link left"><a href="#welcome-section">Inicio</a></li>
     </ul>
   </nav>
   <section id="welcome-section">
     <div class="wel-div">
       <div class="wel-div-dif">
-        <h1>¡Hola! Soy Ricardo</h1>
-        <div id="perfiles-div">
-          <p class="code" id="perfil1">Ingeniero en computación</p>
-          <p class="code" id="perfil2">Científico de datos</p>
-          <p class="code" id="perfil3">Desarrollador web</p>
-          <p class="code" id="perfil4">Desarrollador python</p>
+        <div class="saludo-contenedor">
+          <h1 class="texto-hover">¡Hola! Soy Ricardo</h1>
+          <i></i>
+        </div>
+        <div id="cont-cargos">
+          <div id="perfiles-div">
+            <p class="code" id="perfil1">
+              <span>Ingeniero en computación</span>
+            </p>
+            <p class="code" id="perfil2">
+              <span>Científico de datos</span>
+            </p>
+            <p class="code" id="perfil3">
+              <span>Desarrollador web</span>
+            </p>
+            <p class="code" id="perfil4">
+              <span>Desarrollador python</span>
+            </p>
+            <p class="code" id="perfil5">
+              <span>Analista de datos</span>
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -35,30 +51,37 @@
   <section id="about-section">
       <h2>Un poco sobre mí</h2>
       <div id="Info_forma">
-        <div class="eje-y-grafica">
-          <p>100</p>
-          <p>90</p>
-          <p>70</p>
-          <p>50</p>
-          <p>30</p>
-          <p>10</p>
-        </div>
-        <div class="texto_info">
-          Soy un apasionado desarrollador con experiencia tanto en el mundo del desarrollo web como en el emocionante campo de la ciencia de datos. Mi enfoque principal se centra en la creación de experiencias de usuario intuitivas y atractivas, tanto en el frontend como en el backend. ​🌐
-        </div>
-        <div class="texto_info">
-          Con una sólida formación en ingeniería de software y diseño de interfaces, me especializo en el desarrollo de aplicaciones web que no solo sean funcionales, sino también visualmente impactantes y fáciles de usar. Me esfuerzo por crear interfaces que no solo sean estéticamente agradables, sino que también mejoren la experiencia del usuario y satisfagan sus necesidades de manera efectiva.
-        </div>
-        <div class="texto_info">
-          Además de mi experiencia en desarrollo web, también tengo habilidades en el campo de la ciencia de datos. Me encanta explorar conjuntos de datos, descubrir patrones y tendencias, y extraer información valiosa para la toma de decisiones empresariales. Tengo experiencia en el análisis de datos utilizando herramientas como Tableau y Power BI, así como en la manipulación y gestión de datos utilizando SQL, Postgres, Oracle SQL y MySQL.
-        </div>
-        <div class="texto_info">
-          Mi objetivo es combinar mi pasión por la tecnología con mi habilidad para comprender y analizar datos para crear soluciones innovadoras y efectivas que impulsen el éxito de los proyectos en los que participo. Estoy constantemente aprendiendo y mejorando mis habilidades para estar al tanto de las últimas tendencias y tecnologías en ambos campos.
-        </div>
-        <div class="texto_info">
-          Estoy emocionado de seguir explorando nuevas oportunidades y desafíos, y espero poder contribuir con mi experiencia y pasión a proyectos interesantes y significativos en el futuro.
-        </div>
-        <div class="eje-y-grafica"></div>
+        <div class="slideshow-container">
+          <div class="mySlides">
+            <q>Soy un apasionado desarrollador con experiencia tanto en el mundo del desarrollo web como en el emocionante campo de la ciencia de datos. Mi enfoque principal se centra en la creación de experiencias de usuario intuitivas y atractivas, tanto en el frontend como en el backend. ​🌐</q>
+            <!--<p class="author">- Ricardo Gonzalez</p>-->
+          </div>
+          <div class="mySlides">
+            <q>Con una sólida formación en ingeniería de software y diseño de interfaces, me especializo en el desarrollo de aplicaciones web que no solo sean funcionales, sino también visualmente impactantes y fáciles de usar. Me esfuerzo por crear interfaces que no solo sean estéticamente agradables, sino que también mejoren la experiencia del usuario y satisfagan sus necesidades de manera efectiva.</q>
+            <!--<p class="author">- Ricardo Gonzalez</p>-->
+          </div>
+          <div class="mySlides">
+            <q>Además de mi experiencia en desarrollo web, también tengo habilidades en el campo de la ciencia de datos. Me encanta explorar conjuntos de datos, descubrir patrones y tendencias, y extraer información valiosa para la toma de decisiones empresariales. Tengo experiencia en el análisis de datos utilizando herramientas como Tableau y Power BI, así como en la manipulación y gestión de datos utilizando SQL, Postgres, Oracle SQL y MySQL.</q>
+            <!--<p class="author">- Ricardo Gonzalez</p>-->
+          </div>
+          <div class="mySlides">
+            <q>Mi objetivo es combinar mi pasión por la tecnología con mi habilidad para comprender y analizar datos para crear soluciones innovadoras y efectivas que impulsen el éxito de los proyectos en los que participo. Estoy constantemente aprendiendo y mejorando mis habilidades para estar al tanto de las últimas tendencias y tecnologías en ambos campos.</q>
+            <!--<p class="author">- Ricardo Gonzalez</p>-->
+          </div>
+          <div class="mySlides">
+            <q>Estoy emocionado de seguir explorando nuevas oportunidades y desafíos, y espero poder contribuir con mi experiencia y pasión a proyectos interesantes y significativos en el futuro.</q>
+            <!--<p class="author">- Ricardo Gonzalez</p>-->
+          </div>
+          <a class="prev" onclick="plusSlides(-1)">❮</a>
+          <a class="next" onclick="plusSlides(1)">❯</a>
+          </div>
+          <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+            <span class="dot" onclick="currentSlide(4)"></span> 
+            <span class="dot" onclick="currentSlide(5)"></span> 
+          </div>
       </div>
   </section>
   <section id="Tools-section">
